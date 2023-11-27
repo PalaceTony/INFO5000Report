@@ -1,6 +1,5 @@
 \documentclass{article}
 \input{packages}
-
 \title{Short Paper - Template}
 \author{Author}
 \date{\today}
@@ -11,34 +10,35 @@
 %                      Title
 %------------------------------------------
 [{
-            \LARGE
-            \textcolor{titleColor}{\textbf{Insert your title here.}}\vspace{1ex}\\
-            %------------------------------------------                                       
-            %                    Authors
-            %------------------------------------------
-            \large
-            \textcolor{authorColor}{Insert Authors here}
-            \vspace{1ex}
-            %------------------------------------------                                                           
-            %                   Abstract
-            %------------------------------------------
-            \normalsize
-            \begin{tcolorbox}[  colback = abstractColor,
-                    ,
-                    width=\linewidth,
-                    arc=1mm, auto outer arc,
-                ]
-                \justifying
-                \input{Sections/0_Abstract}
-            \end{tcolorbox}
-            \vspace{1.5ex}
-        }]
+                        \LARGE
+                        \textcolor{titleColor}{\textbf{Finding Emergency Feminine Product Accessible
+                                        Station in City Corners}}\vspace{1ex}\\
+                        %------------------------------------------                                       
+                        %                    Authors
+                        %------------------------------------------
+                        \large
+                        \textcolor{authorColor}{Group 1}
+                        \vspace{1ex}
+                        %------------------------------------------                                                           
+                        %                   Abstract
+                        %------------------------------------------
+                        \normalsize
+                        \begin{tcolorbox}[  colback = abstractColor,
+                                        ,
+                                        width=\linewidth,
+                                        arc=1mm, auto outer arc,
+                                ]
+                                \justifying
+                                \input{Sections/0_Abstract}
+                        \end{tcolorbox}
+                        \vspace{1.5ex}
+                }]
 
 
 %------------------------------------------
 %                   Main Matter
 %------------------------------------------
-
+\nocite{*}
 \input{Sections/1_Introduction}
 \input{Sections/2_Methods}
 \input{Sections/3_Results}
@@ -49,9 +49,11 @@
 \onecolumn
 \input{Sections/references}
 
-\begin{appendices}
-    \input{Sections/Appendices}
-\end{appendices}
+% \begin{appendices}
+%     \input{Sections/Appendices}
+% \end{appendices}
 
 
 \end{document}
+
+

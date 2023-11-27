@@ -1,8 +1,81 @@
-\section{Design}
-\blindmathtrue
-\Blindtext[5]  
+\section{Methodology}
+\subsection{Data Collection}
+\subsubsection{Field Studies}
+We visited the shopping mall Taikoo Hui and Landmark in Guangzhou as well as QingHuiYuan in Foshan to conduct field studies regarding the availability, number, location and affordability of emergency feminie product accessible station in their locations.
 
+\subsubsection{Weibo database analyses}
 
+We searched keywords such as "sanitary pad self-service box" on Weibo to gather data on emergency feminie product accessible station of other school locations in Guangdong province to build the database for visualization map website.
 
+\subsubsection{Surveys}
+We designed a survey to understand the budget preferences and consumption habits related to sanitary pads among the university, involves the following key steps:\\
 
+\textbf{Survey Design.}
+To assess students' awareness and attitudes towards the availability and affordability of sanitary pads, we create a short survey on Tencent vote and send to both female staff and students in HKUST(GZ), and conduct Stratified Random Sampling to ensure representation from different strata like academic years, and departments.\\
+
+\textbf{Survey Result.}
+We collected 62 answers in total, with 48\% master students, 29\% PhD students, 13\% bachelor students and 6\% university staff. The majority (85\%) prefer purchasing sanitary pads through third-party online platforms (e.g., Taobao, JD.com, Pinduoduo). Supermarkets and convenience stores are also popular, with 56\% of respondents using these channels. These population who have habits to purchase off-line are our target early adopter customers.\\
+
+As for the budget preference, there is a huge disparity. A significant portion of respondents (40\%) spends between 1-2 RMB per pad. Another substantial group (39\%) spends between 2-3 RMB, indicating a habit for moderately priced options. Period poverty does not seem to be an issue on campus as only 10\% spends below 1RMB per pad.\\
+
+Brand loyalty is high, with 83.87\% of respondents considering the brand as an important factor. Top brands include Kao Laurier (42\%), Kotex (40\%), P\&G Whisper (35\%), and Sofy (35\%). The majority (84\%) consider quality (absorption capacity, leak prevention) as the most important factor. This indicates that we better collaborate with these brands to start with instead of developing our own products. If we were to develop our own new products, we need to focus on quality.\\
+
+Only 6\% consider convenience of purchase location as the most important factor. This implies that although we have some enthusiastic buyers, installing multiple stations on campus might be unnecessary.\\
+
+When asking their willingness to buy in other products at emergency feminie product accessible station, there's an interest in purchasing cleaning products (73\%), disposable underwear (56\%), and snacks (19\%). Some people put “no interest” as the answer indicating that it is also OK to not include other products.\\
+
+People also showed habit of using tampons and interest in learning and educating about it.
+Cloth pads is also mentioned as an alternative both due to its affordability and environmental benefit.
+
+\subsection{Interactive Plot Explanation}
+Our study utilized a collected dataset detailing the locations of Emergency Sanitary Pad Stations across various city corners. This dataset included key variables such as the type of location (e.g., shopping malls, universities), the district in which the station is located, the number of available stations, and the distance to the nearest metro station. To facilitate our analysis, we converted these data points into geographical coordinates.\\
+
+\subsubsection{Data Transformation}
+In order to address data inconsistencies and enhance the visualization, we undertook several preprocessing steps:\\
+
+\begin{itemize}
+    \item \textbf{Handling Missing Values:} Instances where the number of stations was not reported (`NA` values) were set to zero. This approach ensures continuity and completeness in our analysis.
+    \item \textbf{Normalization:} Considering the high variance observed in the number of stations across different locations, we applied a logarithmic normalization. This transformation not only stabilized the variance but also improved the interpretability of our data in the visual representation.
+\end{itemize}
+
+\subsubsection{Interactive Map and Scatter Plot Creation}
+We employed ECharts, a powerful, interactive charting and visualization library, for creating our visualizations. The methodology for developing these interactive plots is described below:
+
+\begin{enumerate}
+    \item \textbf{Initializing the Containers:}
+          \begin{itemize}
+              \item The interactive map and scatter plot are displayed in separate containers (\texttt{mapContainer} and \texttt{scatterContainer}) within the webpage. These containers are dynamically sized and aligned for optimal viewing.
+          \end{itemize}
+
+    \item \textbf{Loading and Parsing Data:}
+          \begin{itemize}
+              \item Using jQuery, we loaded our dataset from a JSON file. The data was then parsed to create a structured representation, where each station's location was associated with its respective data points such as distance to the metro, quantity, and type.
+          \end{itemize}
+
+    \item \textbf{Chart Initialization and Configuration:}
+          \begin{itemize}
+              \item Two ECharts instances were created for the map (\texttt{mapChart}) and the scatter plot (\texttt{scatterChart}).
+              \item The map visualization utilized a GeoJSON of the relevant city areas to plot the station locations.
+              \item The scatter plot was designed to display the log-normalized number of stations and their distance to the nearest metro station. Different types of locations were color-coded for better differentiation.
+          \end{itemize}
+
+    \item \textbf{Data Grouping and Representation:}
+          \begin{itemize}
+              \item The data was grouped by location type to facilitate comparative analysis across different categories.
+              \item Each group's data was represented as a series in the scatter plot, with individual data points reflecting the number of stations and their metro proximity.
+          \end{itemize}
+
+    \item \textbf{Interactivity and Responsiveness:}
+          \begin{itemize}
+              \item Click events on the map trigger updates in the scatter plot, showing data corresponding to the selected area.
+              \item The scatter plot dynamically adjusts its display based on the selected map region, providing an interactive experience that allows users to explore data in specific city areas.
+          \end{itemize}
+
+    \item \textbf{Styling and Customization:}
+          \begin{itemize}
+              \item We customized the styling of the map and scatter plot for clarity and ease of use. This included adjustments to the layout, color schemes, labels, and tooltips to enhance user interaction and data comprehension.
+          \end{itemize}
+\end{enumerate}
+
+Through these methodological steps, we successfully developed an interactive visualization tool that enables users to explore the distribution and characteristics of Emergency Sanitary Pad Stations across different city areas. This tool not only presents the data in an engaging and informative manner but also allows for an in-depth analysis of the availability and accessibility of these crucial facilities.
 
